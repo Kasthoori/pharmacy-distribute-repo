@@ -1,0 +1,5 @@
+spring:
+    application:
+        name: drug-service
+server:
+    port: 9002
