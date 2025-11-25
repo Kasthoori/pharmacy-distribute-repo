@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class InventoryRequest {
     private String drugCode;
-    private Integer quantity;
+    private Integer quantity; // MUST be named 'quantity'
 }

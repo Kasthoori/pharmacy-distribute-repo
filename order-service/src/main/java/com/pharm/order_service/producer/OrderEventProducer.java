@@ -11,9 +11,10 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class OrderEventProducer {
     
-    private final KafkaTemplate<String, OrderCreatedEvent> kafkaTemplate;
+    private final KafkaTemplate<String, String> kafkaTemplate;
 
     public void publishOrderCreated(OrderCreatedEvent event) {
-         kafkaTemplate.send("orders.created", event.getOrderId().toString(), event);
+        String s = event.getOrderId().toString();
+        kafkaTemplate.send("orders.created", s, event.toString());
     }
 }

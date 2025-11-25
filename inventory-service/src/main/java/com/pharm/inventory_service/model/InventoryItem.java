@@ -23,10 +23,10 @@ public class InventoryItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable= false, unique = true)
+    @Column(name="drug_code", nullable= false)
     private String drugCode;
 
-    @Column(nullable = false)
-    private int quantity;
+    @Column(name="quantity", nullable = true)
+    private Integer quantity;
     
 }

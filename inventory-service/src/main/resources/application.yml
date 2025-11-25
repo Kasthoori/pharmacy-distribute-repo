@@ -10,5 +10,21 @@ spring:
     show-sql: true
   application:
     name: inventory-service
+  kafka:
+    bootstrap-servers: localhost:9092
+  web:
+    error:
+      include-message: always
+      include-binding-errors: always
+      include-stacktrace: always
 server:
-    port: 9004
+  port: 9004
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE

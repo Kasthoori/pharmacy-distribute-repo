@@ -15,13 +15,20 @@ import lombok.RequiredArgsConstructor;
 public class InventoryService {
     
     private final InventoryRepository inventoryRepository;
-    private final InventoryRepository repo;
 
     public List<InventoryItem> all() {
-        return repo.findAll();
+        return inventoryRepository.findAll();
     }
 
     public InventoryItem create(InventoryRequest request) {
+
+           System.out.println(">>> Incoming InventoryRequest: drugCode=" 
+                + request.getDrugCode() + ", quantity=" + request.getQuantity());
+
+            if(request.getQuantity() == null) {
+                throw new IllegalArgumentException("Quantity cannot be null");
+            }
+
             InventoryItem item = new InventoryItem();
             item.setDrugCode(request.getDrugCode());
             item.setQuantity(request.getQuantity());
