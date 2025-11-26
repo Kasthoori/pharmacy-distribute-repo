@@ -25,6 +25,7 @@ public class DrugController {
 
     @PostMapping
     public Drug create(@RequestBody Drug drug) {
+        System.out.println("Creating drug: ");
         return drugRepository.save(drug);
     }
     

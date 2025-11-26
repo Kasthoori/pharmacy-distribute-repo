@@ -1,5 +1,6 @@
 package com.pharm.order_service.producer;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
@@ -11,10 +12,13 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class OrderEventProducer {
     
-    private final KafkaTemplate<String, String> kafkaTemplate;
+    // private final KafkaTemplate<String, String> kafkaTemplate;
+
+    @Autowired
+    private KafkaTemplate<String, OrderCreatedEvent> kafkaTemplate;
 
     public void publishOrderCreated(OrderCreatedEvent event) {
-        String s = event.getOrderId().toString();
-        kafkaTemplate.send("orders.created", s, event.toString());
+        String key = event.getOrderId().toString();
+        kafkaTemplate.send("orders.created", key, event);
     }
 }
