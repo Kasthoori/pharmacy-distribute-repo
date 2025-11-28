@@ -1,0 +1,10 @@
+# Global defaults shared by multiple services
+
+eureka:
+    client:
+        register-with-eureka: true
+        fetch-registry: true
+
+spring:
+    profiles:
+        default: local # without env var, apps run as 'local' profile
