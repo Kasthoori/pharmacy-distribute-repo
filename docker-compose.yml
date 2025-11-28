@@ -102,7 +102,20 @@ services:
       - "8083:8080"
     networks:
       - pharmacy-net
-    
+  auth-service:
+    image: auth-service:latest
+    container_name: auth-service
+    depends_on:
+      - mysql
+      - config-server
+      - discovery-server
+    environment:
+      - SPRING_CLOUD_CONFIG_URI=http://config-server:8888
+      - SPRING_PROFILE_ACTIVE=docker
+    ports:
+      - "9001:9001"
+    networks:
+      - pharmacy-net
       
 
 volumes:
