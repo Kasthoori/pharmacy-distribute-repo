@@ -1,0 +1,11 @@
+spring:
+  config:
+    activate:
+      on-profile: docker
+server:
+  port: 8761
+
+# Inside Docker, other services will use 'discovery-service:8761'
+eureka:
+  instance:
+    hostname: discovery-server
