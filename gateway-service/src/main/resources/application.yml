@@ -3,12 +3,41 @@ spring:
     name: gateway-service
   config:
     import: "optional:configserver:http://config-server:8888"
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+          
 
-# server:
-#     port: 8083
+      # routes:
+      #   - id: inventory-service
+      #     uri: lb://inventory-service
+      #     predicates:
+      #       - Path=/inventory/**
 
-# eureka:
-#     client:
-#         service-url:
-#             defaultZone: http://localhost:8761/eureka/
+      #   - id: order-service
+      #     uri: lb://order-service
+      #     predicates:
+      #       - Path=/orders/**
+
+      #   - id: drug-service
+      #     uri: lb://drug-service
+      #     predicates:
+      #       - Path=/drugs/**
+
+      #   - id: auth-service
+      #     uri: lb://auth-service
+      #     predicates:
+      #       - Path=/auth/**
+
+
+server:
+    port: 8083
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://discovery-server:8761/eureka/
         
