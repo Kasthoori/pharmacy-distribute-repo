@@ -7,6 +7,7 @@ spring:
         git:
           uri: https://github.com/Kasthoori/pharmacy-distribute-repo.git
           default-label: feature/docker_services_pharmacy_app
+          clone-on-start: true
 server:
     port: 8888
 
