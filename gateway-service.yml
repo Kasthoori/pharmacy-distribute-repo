@@ -2,14 +2,12 @@ server:
   port: 8083
 
 spring:
-  application:
-    name: gateway-service
-
   cloud:
     gateway:
       discovery:
         locator:
           enabled: true
+          lower-case-service-id: true
           
 
       routes:
@@ -36,4 +34,4 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://discovery-server:8761/eureka/
+      defaultZone: http://discovery-server:8761/eureka
