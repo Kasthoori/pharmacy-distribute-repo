@@ -7,5 +7,10 @@ server:
 
 # Inside Docker, other services will use 'discovery-service:8761'
 eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: ""
   instance:
     hostname: discovery-server
