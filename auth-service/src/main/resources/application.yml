@@ -2,17 +2,22 @@ server:
   port: 9001
 
 spring:
+  profiles:
+    active: docker
+
+  config:
+    import: "optional:file:../auth-service.yml"
   application: 
     name: auth-service
-  datasource:
-    url: jdbc:mysql:// pharmacy-mysql:3306/pharmacy_auth
-    username: root
-    password: 2237111@Kas
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
+  # datasource:
+  #   url: jdbc:mysql:// pharmacy-mysql:3306/pharmacy_auth
+  #   username: root
+  #   password: 2237111@Kas
+  #   driver-class-name: com.mysql.cj.jdbc.Driver
+  # jpa:
+  #   hibernate:
+  #     ddl-auto: update
+  #   show-sql: true
   kafka:
     bootstrap-servers: kafka:9092
 
