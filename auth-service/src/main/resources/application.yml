@@ -5,7 +5,7 @@ spring:
   # profiles:
   #   active: docker
   config:
-    import: "optional:configserver:http://config-server:8888"
+    import: "optional:file:../auth-service.yml"
   application: 
     name: auth-service
   # datasource:
