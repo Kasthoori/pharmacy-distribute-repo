@@ -4,15 +4,15 @@ server:
 spring:
   profiles:
     active: docker
-  datasource:
-      url: jdbc:mysql:// pharmacy-mysql:3306/pharmacy_auth
-      username: root
-      password: 2237111@Kas
-      driver-class-name: com.mysql.cj.jdbc.Driver
-    jpa:
-      hibernate:
-        ddl-auto: update
-      show-sql: true
+  # datasource:
+  #     url: jdbc:mysql:// pharmacy-mysql:3306/pharmacy_auth
+  #     username: root
+  #     password: 2237111@Kas
+  #     driver-class-name: com.mysql.cj.jdbc.Driver
+  #   jpa:
+  #     hibernate:
+  #       ddl-auto: update
+  #     show-sql: true
 eureka:
   client:
     service-url:
