@@ -2,6 +2,8 @@ server:
   port: 9001
 
 spring:
+  application: 
+    name: auth-service
   datasource:
     url: jdbc:mysql:// pharmacy-mysql:3306/pharmacy_auth
     username: root
