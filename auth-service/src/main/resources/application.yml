@@ -2,6 +2,8 @@
 #   port: 9001
 
 spring:
+  config:
+    import: "optional:file:./config/auth-service.yml"
   # profiles:
   #   active: docker
   # config:
