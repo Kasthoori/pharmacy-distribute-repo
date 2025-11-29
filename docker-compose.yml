@@ -5,8 +5,8 @@ services:
     container_name: pharmacy-mysql
     environment:
       MYSQL_ROOT_PASSWORD: 2237111@Kas
-      MYSQL_USER: pharmacy
-      MYSQL_PASSWORD: pharmacy123
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 2237111@Kas
 
     ports:
       - "3306:3306"
