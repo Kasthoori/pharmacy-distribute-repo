@@ -2,6 +2,8 @@ server:
   port: 9001
 
 spring:
+  profiles:
+    active: docker
   datasource:
       url: jdbc:mysql:// pharmacy-mysql:3306/pharmacy_auth
       username: root
