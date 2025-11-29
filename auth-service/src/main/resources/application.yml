@@ -4,8 +4,8 @@
 spring:
   config:
     import: "optional:file:./config/auth-service.yml"
-  # profiles:
-  #   active: docker
+  profiles:
+    active: docker
   # config:
   #   import: "optional:file:./auth-service.yml"
   application: 
